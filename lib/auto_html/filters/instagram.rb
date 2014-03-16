@@ -7,4 +7,5 @@ AutoHtml.add_filter(:instagram) do |text|
   text.gsub(regex) do
     %{<iframe src="#{text}embed" height="714" width="616" frameborder="0" scrolling="no"></iframe>}
   end
+  text[0..-2] unless /src="#{text}embed"\// =~ text
 end
